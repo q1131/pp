@@ -81,7 +81,7 @@ public class HouseController {
         System.out.println(oldPic);
         File file=null;
         if(pfile.getOriginalFilename().equals("")){
-            System.out.println("不修改图片");
+            System.out.println("不修改图片qqqqqqqqqq");
         }else{
             System.out.println("修改图片");
             file=new File("D:\\images\\"+oldPic);
