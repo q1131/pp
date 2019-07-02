@@ -62,7 +62,7 @@ public class HouseController {
     @RequestMapping("getUserHouse")
     public String getUserHouse(Integer page,HttpSession session,Model model) throws  Exception {
         Users user=(Users)session.getAttribute("user");
-        PageInfo<House> pageInfo=houseService.getUserHouseByPage(page==null?1:page,1,user.getId());
+        PageInfo<House> pageInfo=houseService.getUserHouseByPage(page==null?1:page,4,user.getId());
         model.addAttribute("pageInfo",pageInfo);
         return "guanli";
     }
@@ -81,7 +81,7 @@ public class HouseController {
         System.out.println(oldPic);
         File file=null;
         if(pfile.getOriginalFilename().equals("")){
-            System.out.println("不修改图片qqqqqqqqqq");
+            System.out.println("不修改图片");
         }else{
             System.out.println("修改图片");
             file=new File("D:\\images\\"+oldPic);
