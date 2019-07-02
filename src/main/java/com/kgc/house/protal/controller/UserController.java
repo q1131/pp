@@ -31,7 +31,6 @@ public class UserController {
     }
     @RequestMapping("loginUser")
     public String login(String name , String password, Model model, HttpSession session){
-
         Users login = userService.login(name, password);
         if(login==null){
             model.addAttribute("info","用户名密码错误!");
@@ -40,7 +39,12 @@ public class UserController {
         else {
             session.setAttribute("user",login);
             session.setMaxInactiveInterval(666666666);
-            return "guanli";
+            if(login.getIsadmin()==0){
+                return "guanli";
+            }
+            else {
+                return "redirect:/admin/admin.jsp";
+            }
         }
     }
 }

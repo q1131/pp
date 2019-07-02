@@ -51,7 +51,7 @@ public class HouseController {
         if(houseService.insertHouse(house)>0){ //保存数据
             //调用业务
             //houseService.addHouse(house); //添加信息到数据库
-            return "redirect:gofabu";  //跳转页面
+            return "redirect:getUserHouse";  //跳转页面
         }
         else{
             //成功上传的图片删除

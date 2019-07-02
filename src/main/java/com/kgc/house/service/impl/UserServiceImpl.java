@@ -61,7 +61,6 @@ public class UserServiceImpl  implements UserService {
     public Users login(String name,String password){
         UsersExample usersExample=new UsersExample();
         UsersExample.Criteria criteria = usersExample.createCriteria();
-        criteria.andIsadminEqualTo(0);
         criteria.andNameEqualTo(name);
         criteria.andPasswordEqualTo(MD5Utils.md5Encrypt(password));
         List<Users> users = usersMapper.selectByExample(usersExample);
